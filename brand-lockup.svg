@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="144" viewBox="0 0 560 144" role="img" aria-labelledby="title desc">
+  <title id="title">Durius Games</title>
+  <desc id="desc">Durius Games wordmark with a modern symbol inspired by the Douro river.</desc>
+  <defs><clipPath id="lockup-clip"><rect x="5" y="5" width="70" height="70" rx="21"/></clipPath></defs>
+  <g transform="translate(5 7) scale(1.6)">
+    <rect x="5" y="5" width="70" height="70" rx="21" fill="#2d2a27"/>
+    <path d="M5 56c15-17 25-6 36-19 10-12 20-17 34-13v17c-11-4-18 0-26 10-14 17-27 4-44 22V56Z" fill="#7fa0a8" clip-path="url(#lockup-clip)"/>
+  </g>
+  <text x="155" y="78" fill="#2d2a27" font-family="Avenir Next, Segoe UI, sans-serif" font-size="55" font-weight="750" letter-spacing="2">DURIUS</text>
+  <text x="159" y="111" fill="#625f58" font-family="Avenir Next, Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="9">GAMES</text>
+</svg>

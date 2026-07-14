@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Durius Games — Browser Games</title>
+    <meta name="description" content="Durius Games makes small browser games inspired by the rhythm and landscape of the Douro.">
+    <meta name="theme-color" content="#f4f0e7">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://luisteixeira8.github.io/">
+    <meta property="og:title" content="Durius Games — Browser Games">
+    <meta property="og:description" content="Small games shaped by the Douro, made with care.">
+    <meta property="og:image" content="https://luisteixeira8.github.io/og-image.svg">
+    <meta property="og:image:alt" content="Durius Games branding inspired by the Douro river and vineyard terraces">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://luisteixeira8.github.io/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Durius Games, home">
+          <img class="brand-lockup" src="brand-lockup.svg" alt="" width="164" height="42">
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#games" data-section-link="games">Games</a>
+          <a href="#about" data-section-link="about">About</a>
+        </nav>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title" data-section="top">
+        <div class="shell hero-layout">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Games shaped by the Douro</p>
+            <h1 id="hero-title">Small games,<br>made with care.</h1>
+            <p class="hero-intro">A growing collection of simple browser games designed for quick, satisfying play.</p>
+            <a class="primary-action" href="#games">
+              Explore the games
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 7.5 10 13l6-5.5"/></svg>
+            </a>
+            <p class="brand-note"><span aria-hidden="true"></span> Inspired by the Douro · Made for the browser</p>
+          </div>
+
+          <div class="hero-art reveal" role="group" aria-label="Quick game selection">
+            <div class="game-console">
+              <div class="console-topline">
+                <span>Quick play / 3 games</span>
+                <i></i>
+              </div>
+              <div class="console-screen">
+                <a class="console-game console-crown" href="https://luisteixeira8.github.io/coroa/" aria-label="Play Coroa" data-game="coroa">
+                  <span></span><span></span><span></span>
+                  <span></span><b>♛</b><span></span>
+                  <span></span><span></span><span></span>
+                </a>
+                <a class="console-game console-stack" href="https://luisteixeira8.github.io/stack-tower/" aria-label="Play Stack Tower" data-game="stack-tower">
+                  <i></i><i></i><i></i><i></i>
+                </a>
+                <a class="console-game console-grid" href="https://luisteixeira8.github.io/tictactoe/" aria-label="Play Tic-Tac-Toe" data-game="tictactoe">
+                  <span class="console-x"></span><span></span><span class="console-o"></span>
+                  <span></span><span class="console-x"></span><span></span>
+                  <span class="console-o"></span><span></span><span class="console-x"></span>
+                </a>
+              </div>
+              <div class="console-controls">
+                <span>Select a tile to start</span>
+                <div><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <span class="console-shadow"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="games-section" id="games" aria-labelledby="games-title" data-section="games">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">The collection</p>
+              <h2 id="games-title">Choose a game</h2>
+            </div>
+            <p>Each one is free to play in your browser. No download, no sign-up.</p>
+          </div>
+
+          <div class="collection-status reveal" role="status" aria-live="polite">
+            <div class="collection-copy">
+              <span>Your collection</span>
+              <strong><b data-explored-count>0</b> of 3 explored</strong>
+            </div>
+            <div class="collection-track" aria-hidden="true">
+              <i data-progress-segment="coroa"></i>
+              <i data-progress-segment="stack-tower"></i>
+              <i data-progress-segment="tictactoe"></i>
+            </div>
+          </div>
+
+          <div class="games-grid">
+            <a class="game-card game-card--coroa reveal" href="https://luisteixeira8.github.io/coroa/" aria-label="Play Coroa — daily logic puzzle" data-game="coroa">
+              <div class="card-visual visual-coroa" aria-hidden="true">
+                <div class="coroa-board">
+                  <span class="region-a"></span><span class="region-a"></span><span class="region-b"></span><span class="region-b"></span>
+                  <span class="region-c"></span><span class="region-a crown-cell">♛</span><span class="region-d"></span><span class="region-b"></span>
+                  <span class="region-c"></span><span class="region-c"></span><span class="region-d"></span><span class="region-d"></span>
+                  <span class="region-e"></span><span class="region-e"></span><span class="region-e"></span><span class="region-d"></span>
+                </div>
+                <span class="visual-chip">Daily puzzle</span>
+                <span class="played-badge">Explored ✓</span>
+              </div>
+              <div class="card-copy">
+                <p class="card-index">Game 01</p>
+                <h3>Coroa</h3>
+                <p>Place one crown in every row, column and region without letting any two touch diagonally.</p>
+                <span class="play-action">Play game <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+
+            <a class="game-card game-card--tower reveal" href="https://luisteixeira8.github.io/stack-tower/" aria-label="Play Stack Tower — precision stacking game" data-game="stack-tower">
+              <div class="card-visual visual-tower" aria-hidden="true">
+                <div class="tower-build">
+                  <i class="tower-block block-1"></i>
+                  <i class="tower-block block-2"></i>
+                  <i class="tower-block block-3"></i>
+                  <i class="tower-block block-4"></i>
+                  <i class="tower-block block-5"></i>
+                </div>
+                <span class="tower-guide"></span>
+                <span class="visual-chip">Timing · Precision</span>
+                <span class="played-badge">Explored ✓</span>
+              </div>
+              <div class="card-copy">
+                <p class="card-index">Game 02</p>
+                <h3>Stack Tower</h3>
+                <p>Drop each moving block at just the right moment and build the tallest tower you can.</p>
+                <span class="play-action">Play game <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+
+            <a class="game-card game-card--tictactoe reveal" href="https://luisteixeira8.github.io/tictactoe/" aria-label="Play Tic-Tac-Toe — classic grid strategy game" data-game="tictactoe">
+              <div class="card-visual visual-tictactoe" aria-hidden="true">
+                <div class="ttt-scene">
+                  <div class="ttt-meta">
+                    <span><i class="mini-x"></i> Your turn</span>
+                    <b>2 : 1</b>
+                  </div>
+                  <div class="ttt-board">
+                    <span class="mark-x"></span><span></span><span class="mark-o"></span>
+                    <span></span><span class="mark-x"></span><span></span>
+                    <span class="mark-o"></span><span></span><span class="mark-x"></span>
+                    <i class="win-stroke"></i>
+                  </div>
+                </div>
+                <span class="visual-chip">CPU · Local duel</span>
+                <span class="played-badge">Explored ✓</span>
+              </div>
+              <div class="card-copy">
+                <p class="card-index">Game 03</p>
+                <h3>Tic-Tac-Toe</h3>
+                <p>Find the winning line in a tactile take on the classic, against the CPU or a friend.</p>
+                <span class="play-action">Play game <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title" data-section="about">
+        <div class="shell about-layout reveal">
+          <p class="eyebrow">About</p>
+          <div>
+            <h2 id="about-title">Rooted in the Douro.<br>Made to play anywhere.</h2>
+            <p>Inspired by the Douro’s terraces, river and quiet rhythm. Durius Games makes small browser games built around interaction, timing and strategy.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>© 2026 Durius Games</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </footer>
+
+    <nav class="mobile-dock" aria-label="Mobile navigation">
+      <a class="is-active" href="#top" data-section-link="top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 11 7-6 7 6v8H5v-8Z"/></svg>
+        <span>Home</span>
+      </a>
+      <a href="#games" data-section-link="games">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+        <span>Games</span>
+      </a>
+      <a href="#about" data-section-link="about">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 11v5M12 8h.01"/></svg>
+        <span>About</span>
+      </a>
+    </nav>
+  </body>
+</html>
