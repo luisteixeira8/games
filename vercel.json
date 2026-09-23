@@ -1,0 +1,4 @@
+{
+  "buildCommand": "npm ci --prefix apps/coroa && npm ci --prefix apps/stack-tower && npm run build",
+  "outputDirectory": "dist"
+}
