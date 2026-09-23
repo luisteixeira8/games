@@ -1,0 +1,1 @@
+export const CrownLogo = () => <svg className="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16l9 8 7-14 7 14 9-8-4 22H12L8 16z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/><path d="M13 33h22" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg>;

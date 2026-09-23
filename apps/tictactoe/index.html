@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#11110f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>TIC TAC TOE — Premium Grid Game</title>
+  <meta name="description" content="A fast, tactile and obsessively polished Tic Tac Toe game.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="app-shell" id="app">
+    <div id="ambient" aria-hidden="true"></div>
+    <header class="topbar">
+      <button class="brand" id="brandBtn" aria-label="Back to menu">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="brand-word">TIC TAC TOE</span>
+      </button>
+      <div class="top-actions">
+        <div class="sound-control" id="soundControl">
+          <button class="icon-btn" id="soundBtn" aria-label="Adjust sound volume" aria-expanded="false" aria-controls="volumePanel">
+            <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg>
+            <svg class="sound-off hidden" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 10 5 5m0-5-5 5"/></svg>
+          </button>
+          <div class="volume-panel" id="volumePanel" role="group" aria-label="Sound volume">
+            <div class="volume-head"><span>Volume</span><output class="volume-value" id="volumeValue" for="volumeSlider">85%</output></div>
+            <input class="volume-slider" id="volumeSlider" type="range" min="0" max="100" value="85" step="1" aria-label="Sound volume" style="--volume-fill:85%">
+          </div>
+        </div>
+        <button class="icon-btn" id="themeBtn" aria-label="Use light theme" aria-pressed="false">
+          <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="theme-moon hidden" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.7 8.7 0 1 0 20.5 15.2Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="screen menu-screen active" id="menuScreen" aria-labelledby="menuTitle">
+        <div class="menu-grid">
+          <div class="hero-block">
+            <div class="eyebrow">Precision. Instinct. Play.</div>
+            <h1 class="hero-title" id="menuTitle">
+              <span class="sr-only">Tic Tac Toe</span>
+              <span class="title-grid" aria-hidden="true">
+                <span class="title-word tic">Tic</span><span class="title-word tac">Tac</span><span class="title-word toe">Toe</span>
+                <i class="title-line vertical v1"></i><i class="title-line vertical v2"></i>
+                <i class="title-line horizontal h1"></i><i class="title-line horizontal h2"></i>
+              </span>
+            </h1>
+            <p class="hero-copy">A classic with a new pulse. <strong>Find the rhythm, close the line</strong> and never let them breathe.</p>
+          </div>
+          <div class="menu-panel">
+            <p class="panel-step">01 · Choose your duel</p>
+            <div class="mode-list" role="radiogroup" aria-label="Modo de jogo">
+              <button class="mode-card active" data-mode="cpu" role="radio" aria-checked="true" style="--order:0">
+                <span class="mode-icon" aria-hidden="true">AI</span>
+                <span><span class="mode-name">Versus CPU</span><span class="mode-desc">You are X. The machine never blinks.</span></span>
+                <span class="radio-dot" aria-hidden="true"></span>
+              </button>
+              <button class="mode-card" data-mode="local" role="radio" aria-checked="false" style="--order:1">
+                <span class="mode-icon" aria-hidden="true">2P</span>
+                <span><span class="mode-name">Local duel</span><span class="mode-desc">Two players, one screen.</span></span>
+                <span class="radio-dot" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="difficulty" id="difficultyWrap">
+              <p class="panel-step">02 · CPU temperament</p>
+              <div class="segmented" role="radiogroup" aria-label="Difficulty">
+                <button class="segment" data-level="easy" role="radio" aria-checked="false">Easy</button>
+                <button class="segment active" data-level="medium" role="radio" aria-checked="true">Medium</button>
+                <button class="segment" data-level="hard" role="radio" aria-checked="false">Hard</button>
+              </div>
+            </div>
+            <button class="primary-btn" id="startBtn"><span>Start the duel</span><span class="arrow" aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen game-screen" id="gameScreen" aria-labelledby="gameTitle">
+        <h2 class="sr-only" id="gameTitle">Tic Tac Toe game</h2>
+        <div class="game-layout">
+          <aside class="side-panel left-panel" aria-label="Session score">
+            <div class="round-wrap"><span class="round-label">Round <span class="round-number" id="roundNumber">01</span></span></div>
+            <div class="score-stack">
+              <div class="score-card score-x" id="scoreCardX">
+                <div class="score-top"><div class="player-id"><span class="mini-mark">X</span><span class="player-name" id="nameX">You</span></div><span class="score-num" id="scoreX">0</span></div>
+                <div class="streak" id="streakX">Waiting for a spark</div>
+              </div>
+              <div class="score-card score-o" id="scoreCardO">
+                <div class="score-top"><div class="player-id"><span class="mini-mark">O</span><span class="player-name" id="nameO">CPU</span></div><span class="score-num" id="scoreO">0</span></div>
+                <div class="streak" id="streakO">Eyes on the board</div>
+              </div>
+              <div class="score-card score-draw">
+                <div class="score-top"><div class="player-id"><span class="mini-mark">—</span><span class="player-name">Draws</span></div><span class="score-num" id="scoreDraw">0</span></div>
+              </div>
+            </div>
+            <div class="history-wrap">
+              <div class="history-title">Recent rounds</div>
+              <div class="history" id="history" aria-label="Result history"></div>
+            </div>
+          </aside>
+
+          <div class="game-center">
+            <div class="status-bar">
+              <div class="turn-status" id="turnStatus"><span class="turn-pip"></span><span class="turn-copy" id="turnCopy" aria-live="polite">Your turn — close the line</span></div>
+              <span class="mode-badge" id="modeBadge">CPU · MEDIUM</span>
+            </div>
+            <div class="board-shell" id="boardShell">
+              <div class="board" id="board" role="grid" aria-label="Tabuleiro de Tic Tac Toe">
+                <button class="cell" data-index="0" style="--i:0" role="gridcell" aria-label="Row 1, column 1"></button>
+                <button class="cell" data-index="1" style="--i:1" role="gridcell" aria-label="Row 1, column 2"></button>
+                <button class="cell" data-index="2" style="--i:2" role="gridcell" aria-label="Row 1, column 3"></button>
+                <button class="cell" data-index="3" style="--i:3" role="gridcell" aria-label="Row 2, column 1"></button>
+                <button class="cell" data-index="4" style="--i:4" role="gridcell" aria-label="Row 2, column 2"></button>
+                <button class="cell" data-index="5" style="--i:5" role="gridcell" aria-label="Row 2, column 3"></button>
+                <button class="cell" data-index="6" style="--i:6" role="gridcell" aria-label="Row 3, column 1"></button>
+                <button class="cell" data-index="7" style="--i:7" role="gridcell" aria-label="Row 3, column 2"></button>
+                <button class="cell" data-index="8" style="--i:8" role="gridcell" aria-label="Row 3, column 3"></button>
+                <svg class="win-line" id="winLine" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="0"></line></svg>
+              </div>
+            </div>
+            <div class="board-actions">
+              <button class="text-btn" id="restartBtn">↻ Restart round</button>
+              <button class="text-btn danger" id="menuBtn">Exit</button>
+            </div>
+          </div>
+
+          <aside class="side-panel right-panel" aria-label="Game options and message">
+            <div class="mood-mark" id="moodMark" aria-hidden="true">X/O</div>
+            <div>
+              <p class="quote" id="quote"><strong>First move.</strong><br>No pressure. Almost.</p>
+              <label class="hint-toggle" id="hintLabel"><span>Subtle hint</span><input class="sr-only" type="checkbox" id="hintToggle"><span class="switch" aria-hidden="true"></span></label>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <section class="result-card" id="resultCard" role="dialog" aria-modal="false" aria-labelledby="resultTitle" aria-describedby="resultKicker">
+      <div class="result-inner">
+        <div class="result-emblem" id="resultEmblem">X</div>
+        <div><p class="result-kicker" id="resultKicker">Round complete</p><h2 class="result-title" id="resultTitle">Perfect line.</h2></div>
+      </div>
+      <div class="result-actions">
+        <button class="play-again" id="playAgainBtn">One more →</button>
+        <button class="menu-again" id="resultMenuBtn" aria-label="Back to menu">⌂</button>
+      </div>
+    </section>
+    <div class="particles" id="particles" aria-hidden="true"></div>
+    <div class="sr-only" id="announcer" aria-live="assertive"></div>
+  </div>
+
+  <script src="assets/js/game.js"></script>
+</body>
+</html>

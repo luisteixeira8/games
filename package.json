@@ -1,0 +1,14 @@
+{
+  "name": "durius-games",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "npm --prefix apps/coroa run lint",
+    "typecheck": "npm --prefix apps/coroa run typecheck && npm --prefix apps/stack-tower run typecheck",
+    "test": "npm --prefix apps/coroa test && npm --prefix apps/stack-tower run test:run",
+    "validate:puzzles": "node scripts/validate-puzzles.mjs",
+    "validate": "npm run lint && npm run typecheck && npm run test && npm run validate:puzzles && npm run build"
+  }
+}
